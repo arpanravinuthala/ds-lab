@@ -1,60 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-void create();//
-void display();//
-void insert();//
-void insert_at_beginning();//
-void insert_at_ending();//
-void delete_();//
-void delete_at_beginning();//
-void delete_at_ending();//
-void length();
+
 struct node{
 int data;
 struct node* next;
 }*temp,*new_node;
 struct node* head=NULL;
 struct node* tail=NULL;
-int main()
-{
-int choice,c=1;
-while(c==1)
-{
-printf("---------------------------------------------------------\n");
-printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
-printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n");
-printf("**********************************************************\n");
-printf("Enter your choice : \n");
-scanf("%d",&choice);
-printf("---------------------------------------------------------\n");
-switch(choice)
-{
-case 1: create();
-break;
-case 2:display();
-break;
-case 3:insert();
-break;
-case 4:insert_at_beginning();
-break;
-case 5:insert_at_ending();
-break;
-case 6:delete_();
-break;
-case 7:delete_at_beginning();
-break;
-case 8:delete_at_ending();
-break;
-case 9:length();
-break;
-case 10:c=0;
-break;
-default:printf("Enter valid number \n");
-}
-}
-
-return 0;
-}
 void create()
 {
 int c=1,value;
@@ -182,4 +134,44 @@ count+=1;
 temp=temp->next;
 }
 printf("The length of the list : %d\n",count);
+}
+int main()
+{
+int choice,c=1;
+  printf("---------------------------------------------------------\n");
+printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
+printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n");
+printf("**********************************************************\n");
+while(c==1)
+{
+printf("Enter your choice : \n");
+scanf("%d",&choice);
+printf("---------------------------------------------------------\n");
+switch(choice)
+{
+case 1: create();
+break;
+case 2:display();
+break;
+case 3:insert();
+break;
+case 4:insert_at_beginning();
+break;
+case 5:insert_at_ending();
+break;
+case 6:delete_();
+break;
+case 7:delete_at_beginning();
+break;
+case 8:delete_at_ending();
+break;
+case 9:length();
+break;
+case 10:c=0;
+break;
+default:printf("Enter valid number \n");
+}
+}
+
+return 0;
 }
