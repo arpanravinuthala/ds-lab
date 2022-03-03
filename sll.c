@@ -10,7 +10,6 @@ struct node* tail=NULL;
 void create()
 {
 int c=1,value;
-while(c==1)
 {
 new_node = (struct node*)(malloc(sizeof(struct node)));
 printf("Enter the value : ");
@@ -27,8 +26,6 @@ else
 tail->next=new_node;
 tail=new_node;
 }
-printf("Enter (1) to continue (0) to exit.....\n");
-scanf("%d",&c);
 }
 }
 void display()
@@ -137,12 +134,12 @@ printf("The length of the list : %d\n",count);
 }
 int main()
 {
-int choice,c=1;
+int choice,c;
   printf("---------------------------------------------------------\n");
 printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
 printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n");
 printf("**********************************************************\n");
-while(c==1)
+do
 {
 printf("Enter your choice : \n");
 scanf("%d",&choice);
@@ -170,8 +167,9 @@ break;
 case 10:c=0;
 break;
 default:printf("Enter valid number \n");
-}
-}
+}printf("enter\n1=contiinue\n0=exit\n");
+scanf("%d",&c);
+}while(c==1);
 
 return 0;
 }
