@@ -111,11 +111,35 @@ void del_pos()
     temp->next=temp->next->next;
     temp->next->prev=temp;
 }
+void search()
+{
+    int a,c=0;
+    printf("enter the element to search\n");
+    scanf("%d",&a);
+    temp=head;
+    while(temp!=NULL)
+    {
+        if(temp->data==a)
+        {
+            c=1;
+            printf("element is present in the linked list\n");
+            break;
+        }
+        else
+        {
+            temp=temp->next;
+        }
+    }
+    if(c==0)
+    {
+        printf("element is not present\n");
+    }
+}
 void main()
 {
     int h,m;
     do{
-        printf("enter\n1.create\n2.display\n3.insert at beginning\n4.insert at the end\n5.insert at the position\n6.delete at beginning\n7.delete at end\n8.delete at specified position\n");
+        printf("enter\n1.create\n2.display\n3.insert at beginning\n4.insert at the end\n5.insert at the position\n6.delete at beginning\n7.delete at end\n8.delete at specified position\n9.search\n");
         scanf("%d",&h);
         switch(h)
         {
@@ -134,6 +158,8 @@ void main()
             case 7:del_end();
             break;
             case 8:del_pos();
+            break;
+            case 9:search();
             break;
             default:printf("enter the correct choice\n");
         }
