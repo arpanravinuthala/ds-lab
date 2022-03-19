@@ -176,12 +176,39 @@ void search()
         printf("element is not present\n");
     }
 }
+void sort()
+{
+    struct node*current=head,*index=NULL;
+    int v;
+    if(head==NULL)
+    {
+        return;
+    }
+    else
+    {
+        while(current!=NULL)
+        {
+            index=current->next;
+            while(index!=NULL)
+            {
+                if(current->data>index->data)
+                {
+                    v=current->data;
+                    current->data=index->data;
+                    index->data=v;
+                }
+                index=index->next;
+            }
+        current=current->next;
+        }
+    }
+}
 int main()
 {
 int choice,c;
   printf("---------------------------------------------------------\n");
 printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
-printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n11.reverseList\n12.search\n");
+printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n11.reverseList\n12.search\n13.sort\n");
 printf("**********************************************************\n");
 do
 {
@@ -213,6 +240,8 @@ break;
 case 11:reverseList();
 break;
 case 12:search();
+break;
+case 13:sort();
 break;
 default:printf("Enter valid number \n");
 }printf("enter\n1=contiinue\n0=exit\n");
