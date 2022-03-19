@@ -132,12 +132,32 @@ temp=temp->next;
 }
 printf("The length of the list : %d\n",count);
 }
+void reverseList()
+{
+    struct node *prevNode, *curNode;
+    if(head!=NULL)
+    {
+        prevNode=head;
+        curNode=head->next;
+        head=head->next;
+        prevNode->next=NULL; // Make first node as last node
+        while(head!=NULL)
+        {
+            head=head->next;
+            curNode->next=prevNode;
+            prevNode=curNode;
+            curNode=head;
+        }
+        head=prevNode; // Make last node as head
+        printf("SUCCESSFULLY REVERSED LIST\n");
+    }
+}
 int main()
 {
 int choice,c;
   printf("---------------------------------------------------------\n");
 printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
-printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n");
+printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n11.reverseList\n");
 printf("**********************************************************\n");
 do
 {
@@ -165,6 +185,8 @@ break;
 case 9:length();
 break;
 case 10:c=0;
+break;
+case 11:reverseList();
 break;
 default:printf("Enter valid number \n");
 }printf("enter\n1=contiinue\n0=exit\n");
