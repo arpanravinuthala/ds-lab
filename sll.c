@@ -152,12 +152,36 @@ void reverseList()
         printf("SUCCESSFULLY REVERSED LIST\n");
     }
 }
+void search()
+{
+    int a,c=0;
+    printf("enter the value to search\n");
+    scanf("%d",&a);
+    temp=head;
+    while(temp!=NULL)
+    {
+        if(temp->data==a)
+        {
+            c=1;
+            printf("element is present\n");
+            break;
+        }
+        else
+        {
+            temp=temp->next;
+        }
+    }
+    if(c==0)
+    {
+        printf("element is not present\n");
+    }
+}
 int main()
 {
 int choice,c;
   printf("---------------------------------------------------------\n");
 printf("1.Create\n2.Display\n3.Insert\n4.Insert at beginning\n5.Insert at ending");
-printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n11.reverseList\n");
+printf("\n6.Delete\n7.Delete at beginning\n8.Delete at ending\n9.Length\n10.Quit\n11.reverseList\n12.search\n");
 printf("**********************************************************\n");
 do
 {
@@ -187,6 +211,8 @@ break;
 case 10:c=0;
 break;
 case 11:reverseList();
+break;
+case 12:search();
 break;
 default:printf("Enter valid number \n");
 }printf("enter\n1=contiinue\n0=exit\n");
